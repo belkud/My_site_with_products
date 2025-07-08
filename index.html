@@ -8,8 +8,40 @@
     <title>Vite + TS</title>
   </head>
   <body>
-    <div id="text">тест 123</div>
-    <div style="color: red;">тест 123</div>
+
+    <div style="display: flex; gap: 20px;">
+      <a href="/My_site_with_products/login_password.html ">Регистрация</a>
+      <div id="entrance">Вход</div>
+    </div>
+
+<div id="underlay">
+
+  <form id="userId" action="" >
+    
+    <div id="cross">X</div>
+    <div style="display: flex;  flex-direction: column; margin-top: 20px;">
+      <label>Ваше имя</label>
+      <input required name="nameUser" type="text" placeholder="Имя">
+    </div>
+    
+    <div style="display: flex; flex-direction: column;">
+      <label >Ваш пароль</label>
+      <input name="namePass" type="password" placeholder="Пароль">
+    </div>
+  
+    <div style="display: flex; justify-content: flex-end; align-items: center;">
+      <label>Запомнить меня</label>
+      <input name="saved" type="checkbox">
+    </div>
+  
+    <input type="submit">
+    <a href="">Забыли пароль?</a>
+
+</form>
+
+</div>
+
+
     <script type="module" src="src/main.ts"></script>
   </body>
 </html>
