@@ -18,10 +18,7 @@ overlay.addEventListener('click',(e:any)=> {
   console.log(e.target.id);
   
   if (e.target.id=='userId' || e.target.id=='') {
-    e.preventDefault()
-    console.log('123');
-    
-    
+    return
   } else {
     overlay.style.display='none'
   }

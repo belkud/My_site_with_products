@@ -3,42 +3,6 @@ body {
 }
 
 
-#userId {
-    width: 230px; 
-    display: flex; 
-    flex-direction: column; 
-    gap: 20px; 
-    border: 1px solid gray; 
-    margin: 25px; 
-    padding: 10px;
-    background: aliceblue;
-    border-radius: 10px;
-    position: absolute;
-    top: calc(50%  - 90px);;
-    left: calc(50%  - 115px);
-
-    
-}
-
-#overlay {
-    background: rgb(0, 0, 0, .5);
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    display: none;
-}
-
-#cross {
-    position: absolute;
-    cursor: pointer;
-    left: calc(100%  - 25px);
-}
-
-#userId input {
-    height: 30px;
-}
-
 header {
     display: flex;
     justify-content: flex-end; 
@@ -57,5 +21,65 @@ a{
 
 
 
+/* окно входа */
+
+#overlay {
+    background: rgb(0, 0, 0, .5);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+
+#overlay input {
+    border-radius: 5px;
+    border: 1px solid gray;
+    height: 33px;
+}
+
+#userId {
+    width: 230px; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 20px; 
+    border: 1px solid gray; 
+    margin: 25px; 
+    padding: 20px;
+    background: aliceblue;
+    border-radius: 10px;
+    position: absolute;
+    top: calc(50%  - 90px);;
+    left: calc(50%  - 115px);
+
+    
+}
+
+#userId div {
+    display: flex; 
+    flex-direction: column;
+    gap: 5px;
+}
+
+#userId :nth-child(4) {
+    justify-content: flex-end;
+    flex-direction: row; 
+    align-items: center;
+}
+
+#cross {
+    position: absolute;
+    cursor: pointer;
+    margin-top: -10px;
+    left: calc(100%  - 25px);
+}
+
+.entrance_button {
+    background: orange;
+}
+
+.entrance_button:hover {
+    background: rgb(244, 174, 45);
+    cursor: pointer;
+}
 
 
