@@ -16,23 +16,46 @@ body {
     position: absolute;
     top: calc(50%  - 90px);;
     left: calc(50%  - 115px);
-    
+
     
 }
 
-#underlay {
+#overlay {
     background: rgb(0, 0, 0, .5);
     height: 100%;
     width: 100%;
     position: fixed;
     top: 0;
+    display: none;
 }
 
 #cross {
     position: absolute;
-    left: calc(100%  - 25px)
+    cursor: pointer;
+    left: calc(100%  - 25px);
 }
 
 #userId input {
     height: 30px;
 }
+
+header {
+    display: flex;
+    justify-content: flex-end; 
+    gap: 20px;
+    padding:20px;
+}
+
+header div{
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+
+
