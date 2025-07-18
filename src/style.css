@@ -30,6 +30,7 @@ a{
     width: 100%;
     position: fixed;
     top: 0;
+    transition: .5s;
 }
 
 #overlay input {

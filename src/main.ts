@@ -7,11 +7,18 @@ let overlay = document.querySelector('#overlay') as HTMLDivElement
 let cross = document.querySelector('#cross') as HTMLButtonElement
 
 entrance.addEventListener('click',()=> {
+  overlay.style.opacity='0'
   overlay.style.display='block'
+  setTimeout(() => {
+    overlay.style.opacity='1'
+    }, 500);
 })
 
 cross.addEventListener('click',()=> {
-  overlay.style.display='none'
+      overlay.style.opacity='0'
+    setTimeout(() => {
+      overlay.style.display='none'
+    }, 500);
 })
 
 overlay.addEventListener('click',(e:any)=> {
@@ -20,6 +27,9 @@ overlay.addEventListener('click',(e:any)=> {
   if (e.target.id=='userId' || e.target.id=='') {
     return
   } else {
-    overlay.style.display='none'
+    overlay.style.opacity='0'
+    setTimeout(() => {
+      overlay.style.display='none'
+    }, 500);
   }
 })
