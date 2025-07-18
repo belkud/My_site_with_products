@@ -1,5 +1,6 @@
 body {
     background: lightgray;
+    margin: 0px;
 }
 
 
@@ -43,13 +44,12 @@ a{
     flex-direction: column; 
     gap: 20px; 
     border: 1px solid gray; 
-    margin: 25px; 
     padding: 20px;
     background: aliceblue;
     border-radius: 10px;
     position: absolute;
     top: calc(50%  - 90px);;
-    left: calc(50%  - 115px);
+    left: calc(50%  - 137px);
 
     
 }
