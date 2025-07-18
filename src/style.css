@@ -39,7 +39,7 @@ a{
     height: 33px;
 }
 
-#userId {
+.form {
     width: 230px; 
     display: flex; 
     flex-direction: column; 
@@ -55,17 +55,19 @@ a{
     
 }
 
-#userId div {
+.form div {
     display: flex; 
     flex-direction: column;
     gap: 5px;
 }
 
-#userId :nth-child(4) {
+.form :nth-child(4) {
     justify-content: flex-end;
     flex-direction: row; 
     align-items: center;
 }
+
+
 
 #cross {
     position: absolute;
