@@ -1,6 +1,8 @@
 body {
     background: lightgray;
     margin: 0px;
+    height: 100vh;
+    width: 100%;
 }
 
 
@@ -24,7 +26,7 @@ a{
 
 /* окно входа */
 
-#overlay {
+#overlay{
     background: rgb(0, 0, 0, .5);
     height: 100%;
     width: 100%;
@@ -33,7 +35,7 @@ a{
     transition: .5s;
 }
 
-#overlay input {
+#overlay input{
     border-radius: 5px;
     border: 1px solid gray;
     height: 33px;
@@ -61,7 +63,12 @@ a{
     gap: 5px;
 }
 
-.form :nth-child(4) {
+.form input {
+    min-height: 33px;
+    margin-bottom: 15px;
+}
+
+#form_entrance :nth-child(4) {
     justify-content: flex-end;
     flex-direction: row; 
     align-items: center;
@@ -78,6 +85,7 @@ a{
 
 .entrance_button {
     background: orange;
+    width: 228px;
 }
 
 .entrance_button:hover {
@@ -85,4 +93,6 @@ a{
     cursor: pointer;
 }
 
-
+#form_registration {
+    /* display: none; */
+}
