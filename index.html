@@ -11,29 +11,30 @@
 
     <header>
       <a href="registration.html">Ссылка</a>
-      <div id="button_registration">Регистрация</div>
+      <div id="registration">Регистрация</div>
       <div id="entrance">Вход</div>
     </header>
 
-<div id="overlay" style="display: none;">
+<div id="overlay" style="display:none ;">
 
   <!--! Форма Вход -->
   <form id="form_entrance" class="form" action="" >
     <div id="cross">X</div>
     <div>
       <label>Почта или телефон</label>
-      <input required name="nameUser" type="text">
+      <input required name="mail" type="text">
     </div>
     
     <div>
       <label >Ваш пароль:</label>
-      <input required name="namePass" type="password">
+      <input required name="password" type="password">
     </div>
     
     <div>
       <label>Запомнить меня</label>
       <input style="margin-top: 20px;" name="saved" type="checkbox">
     </div>
+
   
     
     <input class="entrance_button" type="submit" value="Войти">
@@ -49,21 +50,23 @@
     <div id="cross">X</div>
     <div>
         <label>Email:</label>
-        <input required name="nameUser" type="text">
+        <input required name="mail" type="text">
       </div>
 
       <div>
         <label>Пароль:</label>
-        <input required name="nameUser" type="password">
+        <input required name="password" type="password">
       </div>
-      <!-- <div style="margin-top: -20px;"></div> -->
+      
+    <div id="enter_password">Введите пароль</div>
+
       <div>
         <label>Повторите пароль:</label>
-        <input required name="nameUser" type="password">
+        <input required name="repeat_password" type="password">
       </div>
+    <div id="wrong_password">Пароли не совпадают</div>
 
-
-      <input class="entrance_button" type="submit"  style="margin-top: 20px; margin-bottom: 0px;" value="Зарегистрироваться">
+      <input class="registration_button" type="submit"  style="margin-top: 30px; margin-bottom: 0px;" value="Зарегистрироваться">
 
     </form>
 
