@@ -12,6 +12,7 @@ let form_registration = document.querySelector('#form_registration') as HTMLForm
 let registration_button = document.querySelector('.registration_button') as HTMLDivElement
 let enter_password = document.querySelector('#enter_password') as HTMLDivElement //!div всплывает при неверных паролях
 let wrong_password = document.querySelector('#wrong_password') as HTMLDivElement //!div всплывает при неверных паролях
+let enter_mail = document.querySelector('#enter_mail') as HTMLDivElement //!div всплывает при неверных паролях
 
 
 
@@ -60,21 +61,30 @@ registration.addEventListener('click',()=> {
 
 let inputs = form_registration.getElementsByTagName('input')
 registration_button.addEventListener('click', (e)=> {  
-  if (inputs[1].value=='') {
-    enter_password.style.display = 'block'
+  if (inputs[0].value=='') {
+    enter_mail.style.opacity = '1'
+    enter_password.style.opacity = '0'
+    wrong_password.style.opacity = '0'
+    e.preventDefault()
+  } else if (inputs[1].value =='') {
+    enter_mail.style.opacity = '0'
+    enter_password.style.opacity = '1'
+    wrong_password.style.opacity = '0'
     e.preventDefault()
   } else if (inputs[1].value !=inputs[2].value) {
-    wrong_password.style.display = 'block'
-    enter_password.style.display = 'none'
+    enter_mail.style.opacity = '0'
+    enter_password.style.opacity = '0'
+    wrong_password.style.opacity = '1'
     e.preventDefault()
-  }else {
-    wrong_password.style.display = 'none'
-    enter_password.style.display = 'none'
-  //   overlay.style.opacity='0'
-  //   setTimeout(() => {
-  //   overlay.style.display='none'
-  // }, 500);
+  } else {
+    // enter_mail.style.opacity = '0'
+    // enter_password.style.opacity = '0'
+    // wrong_password.style.opacity = '0'
   }
+
+  // for (let i = 0; i < inputs.length; i++) {
+    
+  // }
 })
 
 

@@ -97,11 +97,17 @@ a{
 
 
 
-#wrong_password, #enter_password {
+#wrong_password, #enter_password, #enter_mail {
     color: red;
     transition: 1s;
     height: 0px;
-    margin-top: -10px;
-    margin-bottom: 10px;
-    display: none;
+    margin-top: -15px;
+    margin-bottom: 15px;
+    transition: 1s;
+    opacity: 0;
+    text-decoration: double;
 }
+
+/* .testCol {
+    background: greenyellow;
+} */
