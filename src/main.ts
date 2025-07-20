@@ -58,34 +58,52 @@ registration.addEventListener('click',()=> {
 })
 
 
-
+//!Проверка пользователя на введенные данные при регистрации
 let inputs = form_registration.getElementsByTagName('input')
+
+let mass_with_domains = ['@gmail.com', '@outlook.com', '@yahoo.com', 
+  '@protonmail.com', '@proton.me', '@mail.ru', '@inbox.ru', '@list.ru', '@bk.ru',
+  '@yandex.ru', '@ya.ru', '@zoho.com', '@tutanota.com', '@tuta.io',
+  '@icloud.com'
+]
+
+ 
+
 registration_button.addEventListener('click', (e)=> {  
-  if (inputs[0].value=='') {
-    enter_mail.style.opacity = '1'
-    enter_password.style.opacity = '0'
-    wrong_password.style.opacity = '0'
-    e.preventDefault()
+  for (let i = 0; i < mass_with_domains.length; i++) {
+    if (inputs[0].value=='') {
+      enter_mail.innerHTML = 'Введите почту'
+      error_mail(e)
+  } else if (!inputs[0].value.includes(mass_with_domains[i])) {
+      enter_mail.innerHTML = 'Неправильно ввели домен'
+      error_mail(e)
   } else if (inputs[1].value =='') {
-    enter_mail.style.opacity = '0'
     enter_password.style.opacity = '1'
-    wrong_password.style.opacity = '0'
+    setTimeout(() => {
+      enter_password.style.opacity = '0'
+    }, 1000);
     e.preventDefault()
+    
   } else if (inputs[1].value !=inputs[2].value) {
-    enter_mail.style.opacity = '0'
-    enter_password.style.opacity = '0'
     wrong_password.style.opacity = '1'
+    setTimeout(() => {
+      wrong_password.style.opacity = '0'
+    }, 1000);
     e.preventDefault()
   } else {
-    // enter_mail.style.opacity = '0'
-    // enter_password.style.opacity = '0'
-    // wrong_password.style.opacity = '0'
   }
-
-  // for (let i = 0; i < inputs.length; i++) {
-    
-  // }
+    }
 })
+
+function error_mail (e:any) {
+  enter_mail.style.opacity = '1'
+    setTimeout(() => {
+      enter_mail.style.opacity = '0'
+    }, 1000);
+    e.preventDefault()
+}
+
+
 
 
 document.body.addEventListener('click', (e)=> {
