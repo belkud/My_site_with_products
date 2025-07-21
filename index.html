@@ -13,12 +13,13 @@
       <a href="registration.html">Ссылка</a>
       <div id="registration">Регистрация</div>
       <div id="entrance">Вход</div>
+      <div id="info_about_user_form">О пользователе</div>
     </header>
 
-<div id="overlay" style="display:none ;">
+<div id="overlay" style="display:  none;">
 
   <!--! Форма Вход -->
-  <form id="form_entrance" class="form" action="" >
+  <form id="form_entrance" class="form" style="display: none;" action="" >
     <div id="cross">X</div>
     <div>
       <label>Почта или телефон</label>
@@ -46,7 +47,7 @@
 
 
 <!--! Форма Регистрация -->
-  <form id="form_registration" class="form" action="">
+  <form id="form_registration" class="form" style="gap: 0px !important; display: none;" action="">
     <div id="cross">X</div>
     <div>
         <label>Email:</label>
@@ -68,27 +69,25 @@
     <div id="wrong_password">Пароли не совпадают</div>
 
       <input class="registration_button" type="submit"  style="margin-top: 30px; margin-bottom: 0px;" value="Зарегистрироваться">
-
     </form>
 
 
     
     
-  </div>
-  
-
-
-
-
 
   
-  <!--! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-<!--   
-  <form class="" id="user_info_form" action="">
+
+ 
+  <!--! Дополнительная форма с данными -->
+
+  <form class=""  id="user_info_form"  action="">
     <div></div>
-    <div>почта</div>
+    <div>
+      <div style="margin-left: 45%;" id="show_email">почта</div>
+      <div><b>User Info</b></div>
+    </div>
     <div id="cross">X</div>
-    <hr>
+    <!-- <hr> -->
 <div>
   <label for="">First name</label>
   <input type="text">
@@ -103,7 +102,7 @@
 </div>
 <div>
   <label for="">Gender</label>
-    <select id="select">
+    <select id="select" style="height: 38px;">
       <option value="male" selected>male</option>
       <option value="female" selected>female</option>
     </select>
@@ -117,15 +116,11 @@
   <input type="text">
 </div>
 
-<input type="submit">
+  <input class="user_info_button" type="submit" value="Сохранить">
+</form>
 
 
-
-
-  </form>
-
- -->
-
+</div>
 
 
     <script type="module" src="src/main.ts"></script>

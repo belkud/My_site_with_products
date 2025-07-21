@@ -53,8 +53,6 @@ a{
     position: absolute;
     top: calc(50%  - 90px);;
     left: calc(50%  - 137px);
-
-    
 }
 
 .form div {
@@ -75,6 +73,9 @@ a{
     align-items: center;
 }
 
+#user_info_form {
+    left: calc(50%  - 199px);
+}
 
 
 #cross {
@@ -84,12 +85,12 @@ a{
     left: calc(100%  - 25px);
 }
 
-.entrance_button, .registration_button {
+.entrance_button, .registration_button, .user_info_button {
     background: orange;
     width: 228px;
 }
 
-.entrance_button:hover, .registration_button:hover {
+.entrance_button:hover, .registration_button:hover, .user_info_button:hover {
     background: rgb(244, 174, 45);
     cursor: pointer;
 }
@@ -111,17 +112,25 @@ a{
 
 
 #user_info_form {
-    display: flex;
+    display: none;
+    flex-direction: row;
     flex-wrap: wrap;
-    width: 390px;
-    gap: 5px;
     background: aliceblue;
     padding: 10px;   
+    width: 378px;
+    gap: 15px;
+    position: absolute;
+    border-radius: 10px;
+    top: calc(50%  - 160px);;
+    left: calc(50%  - 197px);
 }
 
 #user_info_form div {
     display: flex;
     flex-direction: column;
     width: 180px;
+}
 
+#user_info_form>input {
+    width: 100%;
 }
