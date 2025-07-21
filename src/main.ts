@@ -35,15 +35,13 @@ cross.addEventListener('click',()=> {
 })
 
 overlay.addEventListener('click',(e:any)=> {
-  // console.log(e.target.id);
-  
-  if (e.target.id=='userId' || e.target.id=='wrong_password' || e.target.id=='form_registration' || e.target.id=='form_entrance' || e.target.id=='') {
-    return
-  } else {
+  if (e.target.id=='overlay' || e.target.id=='cross') {
     overlay.style.opacity='0'
     setTimeout(() => {
       overlay.style.display='none'
     }, 500);
+  } else {
+    return
   }
 })
 
@@ -59,41 +57,45 @@ registration.addEventListener('click',()=> {
 
 
 //!Проверка пользователя на введенные данные при регистрации
+
 let inputs = form_registration.getElementsByTagName('input')
 
-let mass_with_domains = ['@gmail.com', '@outlook.com', '@yahoo.com', 
-  '@protonmail.com', '@proton.me', '@mail.ru', '@inbox.ru', '@list.ru', '@bk.ru',
-  '@yandex.ru', '@ya.ru', '@zoho.com', '@tutanota.com', '@tuta.io',
-  '@icloud.com'
-]
-
- 
-
 registration_button.addEventListener('click', (e)=> {  
-  for (let i = 0; i < mass_with_domains.length; i++) {
+  let domains = inputs[0].value
+  let minLength = inputs[0].value.indexOf('@');
+  console.log(minLength);
+  
     if (inputs[0].value=='') {
-      enter_mail.innerHTML = 'Введите почту'
-      error_mail(e)
-  } else if (!inputs[0].value.includes(mass_with_domains[i])) {
-      enter_mail.innerHTML = 'Неправильно ввели домен'
-      error_mail(e)
+    error_mail(e)
+      return  enter_mail.innerHTML = 'Введите почту'
+  } else if (!domains.includes('@gmail.com') && !domains.includes('@mail.ru')  && !domains.includes('@yandex.ru') ) {
+    error_mail(e)
+      return enter_mail.innerHTML = 'Неправильно ввели домен'
+  } else if (minLength <= 3 ) {
+    error_mail(e)
+      return enter_mail.innerHTML = 'Недостаточное количество символов'
   } else if (inputs[1].value =='') {
-    enter_password.style.opacity = '1'
-    setTimeout(() => {
-      enter_password.style.opacity = '0'
-    }, 1000);
-    e.preventDefault()
-    
+    error_password(e)
+      return enter_password.innerHTML = 'Пароли не совпадают'
+  } else if (inputs[1].value.length <=6) {
+    error_password(e)
+      return enter_password.innerHTML = 'Пароль меньше 6 символов'
+  } else if (inputs[1].value.includes('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{3,}@[^@]+$/')) {
+    error_password(e)
+      return enter_password.innerHTML = 'введите заглавную букву'
   } else if (inputs[1].value !=inputs[2].value) {
     wrong_password.style.opacity = '1'
     setTimeout(() => {
       wrong_password.style.opacity = '0'
     }, 1000);
     e.preventDefault()
-  } else {
   }
-    }
-})
+
+    
+document.cookie = (`${inputs[0].value} : ${inputs[1].value}; max-age=15`)
+
+    
+  })
 
 function error_mail (e:any) {
   enter_mail.style.opacity = '1'
@@ -103,6 +105,51 @@ function error_mail (e:any) {
     e.preventDefault()
 }
 
+function error_password (e:any) {
+  enter_password.style.opacity = '1'
+  setTimeout(() => {
+      enter_password.style.opacity = '0'
+    }, 1000);
+    e.preventDefault()
+}
+
+
+
+
+
+console.log(document.cookie);
+
+
+
+
+
+let acc = 0
+let acc2 = 0
+let acc3 = 0
+
+
+function testFunc(str:any) {
+  for (let i = 0; i < str.length; i++) {
+    if (str[i]>'a' && str[i]<'z') {
+      acc++
+      if(acc>0) wrong_password.innerHTML = ('Введите букву')
+    } else if(str[i]>'A' && str[i]<'Z'){
+      acc2++
+      wrong_password.innerHTML = ('Введите букву 2')
+    } else if (str[i]>0 && str[i]<9) {
+      acc3++
+      wrong_password.innerHTML = ('Введите цифру')
+      console.log(acc3);
+    }    
+  }
+}
+
+testFunc(inputs[0].value)
+
+
+  // let correctPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{3,}@[^@]+$/
+
+
 
 
 
@@ -110,4 +157,3 @@ document.body.addEventListener('click', (e)=> {
   console.log(e.target);
   
 })
-console.log(inputs[0]);
