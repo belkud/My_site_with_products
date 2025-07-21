@@ -108,6 +108,20 @@ a{
     text-decoration: double;
 }
 
-/* .testCol {
-    background: greenyellow;
-} */
+
+
+#user_info_form {
+    display: flex;
+    flex-wrap: wrap;
+    width: 390px;
+    gap: 5px;
+    background: aliceblue;
+    padding: 10px;   
+}
+
+#user_info_form div {
+    display: flex;
+    flex-direction: column;
+    width: 180px;
+
+}
