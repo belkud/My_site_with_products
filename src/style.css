@@ -99,7 +99,9 @@ a{
     cursor: pointer;
 }
 
-
+.user_info_button {
+    margin-top: 10px;
+}
 
 
 #wrong_password, #enter_password, #enter_mail {

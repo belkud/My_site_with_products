@@ -21,7 +21,7 @@ let show_email = document.querySelector('#show_email') as HTMLDivElement //! П�
 let wrong_name = document.querySelector('#wrong_name') as HTMLDivElement //! Ошибка при неверном имени
 let wrong_lastname = document.querySelector('#wrong_lastname') as HTMLDivElement //! Ошибка при неверной фамилии
 let wrong_birth = document.querySelector('#wrong_birth') as HTMLDivElement //! Ошибка при неверной дате рождения
-let wrong_gender = document.querySelector('#wrong_gender') as HTMLDivElement //! ошибка если пол не выбран
+let wrong_telephone = document.querySelector('#wrong_telephone') as HTMLDivElement //! ошибка если пол не выбран
 
 
 
@@ -149,7 +149,7 @@ console.log(123);
 
 
 
-//! форма заполнения user info
+//! код заполнения user info
 let form_inputs = user_info_form.getElementsByTagName('input')
 
 user_info_button.addEventListener('click', (e)=> {
@@ -175,20 +175,8 @@ user_info_form.addEventListener('keydown', (e)=> {
     } else if (e.target==form_inputs[1]) {
       wrong_lastname.innerHTML = 'Используйте буквы'
       error_lastname(e)
-    }
-    
-  } else  if (Number(e.key) <= 0 && Number(e.key)>=9) {
-    console.log('ghfgh');
-      if (e.target==form_inputs[2]) {
-      
-      }
+    } 
   }
-
-
-
-  // console.log(e.target);
-  // console.log(e.currentTarget);
-  
 })
 
 
@@ -219,14 +207,32 @@ function error_birthdate (e:any) {
 
 
 
-
-// wrong_lastname = 
-// wrong_birth = doc
-// wrong_gender = do
+let telephone_number = document.querySelector('#telephone_number') as HTMLInputElement
 
 
-console.log(form_inputs[0]);
+telephone_number.addEventListener('keydown',(e:any)=> {
+    let numbers = telephone_number.value.length
+    if (Number(e.key)<=9) {
+        if (numbers>=0 && numbers<=3) {
+            telephone_number.value='+7 ('
+        } else if(numbers==7) {
+            telephone_number.value+= ') '
+        } else if(numbers==12 || numbers==15) {
+            telephone_number.value+='-'
+        }   
+    } else if (e.key !='Backspace') {
+        e.preventDefault()
+        wrong_telephone.innerHTML='Введите цифры'
+        error_telephone()
+    }
+})
 
+function error_telephone () {
+  wrong_telephone.style.opacity = '1'
+  setTimeout(() => {
+      wrong_telephone.style.opacity = '0'
+    }, 1000);
+}
 
 
 
@@ -279,44 +285,5 @@ document.body.addEventListener('click', (e)=> {
   console.log(e.target);
   
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-
-
-
-
-
 
 
