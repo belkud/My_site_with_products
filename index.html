@@ -16,7 +16,7 @@
       <div id="info_about_user_form">О пользователе</div>
     </header>
 
-<div id="overlay" style="display:  none;">
+<div id="overlay">
 
   <!--! Форма Вход -->
   <form id="form_entrance" class="form" style="display: none;" action="" >
@@ -83,22 +83,26 @@
   <form class=""  id="user_info_form"  action="">
     <div></div>
     <div>
-      <div style="margin-left: 45%;" id="show_email">почта</div>
-      <div><b>User Info</b></div>
+      <br>
+      <div id="show_email"></div>
+      <br>
+      <div style="margin-left:-20%;"><b>User Info</b></div>
     </div>
     <div id="cross">X</div>
-    <!-- <hr> -->
 <div>
   <label for="">First name</label>
-  <input type="text">
+  <input maxlength="20" type="text">
+  <div class="user_info_error" id="wrong_name"></div>
 </div>
 <div>
   <label for="">Last name</label>
-  <input type="text">
+  <input maxlength="20" type="text">
+  <div class="user_info_error" id="wrong_lastname"></div>
 </div>
 <div>
   <label for="">Year of birth</label>
-  <input type="text">
+  <input type="number">
+  <div class="user_info_error" id="wrong_birth"></div>
 </div>
 <div>
   <label for="">Gender</label>
@@ -106,6 +110,7 @@
       <option value="male" selected>male</option>
       <option value="female" selected>female</option>
     </select>
+    <div class="user_info_error" id="wrong_gender"></div>
 </div>
 <div>
   <label for="">Phone number</label>

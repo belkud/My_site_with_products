@@ -4,20 +4,24 @@ import './style.css'
 let entrance = document.querySelector('#entrance') as HTMLInputElement //! кнопка входа
 let overlay = document.querySelector('#overlay') as HTMLDivElement //! подложка
 let cross = document.querySelector('#cross') as HTMLButtonElement //! кнопка закрытия формы
-let registration = document.querySelector('#registration') as HTMLDivElement
+let registration = document.querySelector('#registration') as HTMLButtonElement
 let form_entrance = document.querySelector('#form_entrance') as HTMLFormElement //! форма с логином и паролем
 let form_registration = document.querySelector('#form_registration') as HTMLFormElement //!регистрация пользователя
 
 
-let registration_button = document.querySelector('.registration_button') as HTMLDivElement
+let registration_button = document.querySelector('.registration_button') as HTMLButtonElement
 let enter_password = document.querySelector('#enter_password') as HTMLDivElement //!div всплывает при неверных паролях
 let wrong_password = document.querySelector('#wrong_password') as HTMLDivElement //!div всплывает при неверных паролях
 let enter_mail = document.querySelector('#enter_mail') as HTMLDivElement //!div всплывает при неверных паролях
 let user_info_form = document.querySelector('#user_info_form') as HTMLFormElement //! Пользовательская инфа
-let user_info_button = document.querySelector('#user_info_button') as HTMLButtonElement //! Отправка пользовательской инфы
+let user_info_button = document.querySelector('.user_info_button') as HTMLButtonElement //! Отправка пользовательской инфы
 
 let info_about_user_form = document.querySelector('#info_about_user_form') as HTMLDivElement //! Отправка пользовательской инфы
 let show_email = document.querySelector('#show_email') as HTMLDivElement //! Пишем почту на форме
+let wrong_name = document.querySelector('#wrong_name') as HTMLDivElement //! Ошибка при неверном имени
+let wrong_lastname = document.querySelector('#wrong_lastname') as HTMLDivElement //! Ошибка при неверной фамилии
+let wrong_birth = document.querySelector('#wrong_birth') as HTMLDivElement //! Ошибка при неверной дате рождения
+let wrong_gender = document.querySelector('#wrong_gender') as HTMLDivElement //! ошибка если пол не выбран
 
 
 
@@ -56,6 +60,7 @@ registration.addEventListener('click',()=> {
     overlay.style.display='block'
     form_registration.style.display='block'
     form_entrance.style.display='none'
+    user_info_form.style.display = 'none'
     setTimeout(() => {
     overlay.style.opacity='1'
   }, 500);
@@ -101,7 +106,7 @@ let domains = inputs[0].value
   
   e.preventDefault()
   document.cookie = (`${inputs[0].value} : ${inputs[1].value}; max-age=15`)
-  show_email.innerHTML = document.cookie
+  show_email.innerHTML = `Hello, ${inputs[0].value}`
   
 
 })
@@ -144,11 +149,83 @@ console.log(123);
 
 
 
+//! форма заполнения user info
+let form_inputs = user_info_form.getElementsByTagName('input')
+
+user_info_button.addEventListener('click', (e)=> {
+  if (form_inputs[0].value=='') {
+    wrong_name.innerHTML = 'Введите имя'
+    error_name(e)
+  } else if (form_inputs[1].value=='') {
+    wrong_lastname.innerHTML = 'Введите фамилию'
+    error_lastname(e)
+  } else if (Number(form_inputs[2].value)<=1900) {
+    error_birthdate(e)
+    wrong_birth.innerHTML='Введите корректную дату'
+  }
+  e.preventDefault()
+})
+
+
+user_info_form.addEventListener('keydown', (e)=> {
+  if (e.key >= '0' && e.key<='9') {
+    if (e.target==form_inputs[0]) {
+      wrong_name.innerHTML = 'Используйте буквы'
+      error_name(e)
+    } else if (e.target==form_inputs[1]) {
+      wrong_lastname.innerHTML = 'Используйте буквы'
+      error_lastname(e)
+    }
+    
+  } else  if (Number(e.key) <= 0 && Number(e.key)>=9) {
+    console.log('ghfgh');
+      if (e.target==form_inputs[2]) {
+      
+      }
+  }
+
+
+
+  // console.log(e.target);
+  // console.log(e.currentTarget);
+  
+})
+
+
+
+function error_name (e:any) {
+  wrong_name.style.opacity = '1'
+  setTimeout(() => {
+      wrong_name.style.opacity = '0'
+    }, 1000);
+    e.preventDefault()
+}
+
+function error_lastname (e:any) {
+  wrong_lastname.style.opacity = '1'
+  setTimeout(() => {
+      wrong_lastname.style.opacity = '0'
+    }, 1000);
+    e.preventDefault()
+}
+
+function error_birthdate (e:any) {
+  wrong_birth.style.opacity = '1'
+  setTimeout(() => {
+      wrong_birth.style.opacity = '0'
+    }, 1000);
+    e.preventDefault()
+}
 
 
 
 
+// wrong_lastname = 
+// wrong_birth = doc
+// wrong_gender = do
 
+
+console.log(form_inputs[0]);
 
 
 
