@@ -17,12 +17,46 @@ chat_with_users.value = document.cookie
 // console.log(document.cookie);
 
 
-try {
-    'sdfsdfsdf'
-    console.log(1);
-    
-} catch (error) {
-    document.body.style.background= 'green'
-    console.log(2);
-    
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+console.log('qwerty');

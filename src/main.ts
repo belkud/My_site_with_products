@@ -305,6 +305,25 @@ console.log(targetInputs);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   // let acc = 0
 // let acc2 = 0
 // let acc3 = 0
@@ -333,5 +352,4 @@ console.log(targetInputs);
 
 
 
-console.log(document.cookie);
-console.log(document.cookie);
+  
