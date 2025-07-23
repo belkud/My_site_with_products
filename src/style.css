@@ -151,10 +151,25 @@ input, select{
 }
 
 
-
-
-
 input:focus, select:focus {
     outline: 2px solid red;
     background-color: pink;
 }
+
+
+
+
+
+
+
+
+
+/*! chat.html */
+#chat_with_users {
+    width: 300px;
+    height: 100px;
+}
+
+
+
+

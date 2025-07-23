@@ -333,3 +333,5 @@ console.log(targetInputs);
 
 
 
+console.log(document.cookie);
+console.log(document.cookie);
