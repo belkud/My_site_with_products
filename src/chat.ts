@@ -8,7 +8,7 @@ console.log(document.cookie);
 
 let chat_with_users = document.querySelector('#chat_with_users') as HTMLTextAreaElement
 
-document.body.addEventListener('input', (e)=> {
+document.body.addEventListener('input', ()=> {
     document.cookie = `${chat_with_users.value};`
 })
 
