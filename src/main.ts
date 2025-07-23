@@ -26,7 +26,7 @@ let wrong_telephone = document.querySelector('#wrong_telephone') as HTMLDivEleme
 
 
 
-entrance.addEventListener('click',()=> {
+entrance.addEventListener('click',()=> { //! обработчик на кнопку 'вход'
     form_registration.style.display='none'
     form_entrance.style.display='block'
     user_info_form.style.display = 'none'
@@ -37,14 +37,14 @@ entrance.addEventListener('click',()=> {
   }, 500);
 })
 
-cross.addEventListener('click',()=> {
+cross.addEventListener('click',()=> { //! закрытие формы (нажатие на крест)
     overlay.style.opacity='0'
     setTimeout(() => {
     overlay.style.display='none'
   }, 500);
 })
 
-overlay.addEventListener('click',(e:any)=> {
+overlay.addEventListener('click',(e:any)=> { //! закрытие формы (при нажатии на overlay)
   if (e.target.id=='overlay' || e.target.id=='cross') {
     overlay.style.opacity='0'
     setTimeout(() => {
@@ -67,7 +67,18 @@ registration.addEventListener('click',()=> {
 })
 
 
-//!Проверка пользователя на введенные данные при регистрации
+
+
+//!Проверка пользователя на введенные данные при входе
+
+
+
+// let acc = 0
+//     if (str[i]>'a' && str[i]<'z') {
+  //       acc++
+  //       if(acc>0) wrong_password.innerHTML = ('Введите букву')
+  //     } else if(str[i]>'A' && str[i]<'Z'){
+
 
 let inputs = form_registration.getElementsByTagName('input')
 
@@ -77,7 +88,6 @@ registration_button.addEventListener('click', (e)=> {
 
 let domains = inputs[0].value
   let minLength = inputs[0].value.indexOf('@');
-  console.log(minLength);
     if (inputs[0].value=='') {
     error_mail(e)
       return  enter_mail.innerHTML = 'Введите почту'
@@ -152,19 +162,6 @@ console.log(123);
 //! код заполнения user info
 let form_inputs = user_info_form.getElementsByTagName('input')
 
-user_info_button.addEventListener('click', (e)=> {
-  if (form_inputs[0].value=='') {
-    wrong_name.innerHTML = 'Введите имя'
-    error_name(e)
-  } else if (form_inputs[1].value=='') {
-    wrong_lastname.innerHTML = 'Введите фамилию'
-    error_lastname(e)
-  } else if (Number(form_inputs[2].value)<=1900) {
-    error_birthdate(e)
-    wrong_birth.innerHTML='Введите корректную дату'
-  }
-  e.preventDefault()
-})
 
 
 user_info_form.addEventListener('keydown', (e)=> {
@@ -178,6 +175,42 @@ user_info_form.addEventListener('keydown', (e)=> {
     } 
   }
 })
+
+user_info_button.addEventListener('click', (e)=> {
+  if (form_inputs[0].value=='') {
+    wrong_name.innerHTML = 'Введите имя'
+    error_name(e)
+  } else if (form_inputs[1].value=='') {
+    wrong_lastname.innerHTML = 'Введите фамилию'
+    error_lastname(e)
+  } else if (Number(form_inputs[2].value)<=1900) {
+    error_birthdate(e)
+    wrong_birth.innerHTML='Введите корректную дату'
+  }
+  e.preventDefault()
+  
+  for (let i = 0; i < form_inputs.length-1; i++) {
+    document.cookie += `${form_inputs[i].value+ ','} ; max-age=10`
+  }
+})
+    
+  
+
+for (let i = 0; i < form_inputs.length-1; i++) {
+  for (let j = 1; j <= 4; j++) {
+    if (form_inputs[j].value=='undefined') {
+      form_inputs[j].value=''
+    } 
+      
+  }
+
+      form_inputs[i].value  = document.cookie.split(',')[i]
+      
+    }
+    
+    console.log(document.cookie);
+
+
 
 
 
@@ -207,9 +240,9 @@ function error_birthdate (e:any) {
 
 
 
+
+//! условие для ввода пользователем телефонного номера
 let telephone_number = document.querySelector('#telephone_number') as HTMLInputElement
-
-
 telephone_number.addEventListener('keydown',(e:any)=> {
     let numbers = telephone_number.value.length
     if (Number(e.key)<=9) {
@@ -220,18 +253,19 @@ telephone_number.addEventListener('keydown',(e:any)=> {
         } else if(numbers==12 || numbers==15) {
             telephone_number.value+='-'
         }   
-    } else if (e.key !='Backspace') {
+    } else if (e.key !='Backspace' && e.key !='Tab') {
         e.preventDefault()
         wrong_telephone.innerHTML='Введите цифры'
-        error_telephone()
+        error_telephone(e)
     }
 })
 
-function error_telephone () {
+function error_telephone (e:any) {
   wrong_telephone.style.opacity = '1'
   setTimeout(() => {
       wrong_telephone.style.opacity = '0'
     }, 1000);
+    e.preventDefault()
 }
 
 
@@ -239,6 +273,10 @@ function error_telephone () {
 
 
 
+document.body.addEventListener('keydown', (e)=> {
+  console.log(e.key);
+  
+})
 
 
 
@@ -251,7 +289,7 @@ function error_telephone () {
 
 
 
-// let acc = 0
+  // let acc = 0
 // let acc2 = 0
 // let acc3 = 0
 
@@ -277,13 +315,5 @@ function error_telephone () {
 
   // let correctPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{3,}@[^@]+$/
 
-
-
-
-
-document.body.addEventListener('click', (e)=> {
-  console.log(e.target);
-  
-})
 
 
