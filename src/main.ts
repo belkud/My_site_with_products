@@ -84,6 +84,7 @@ let inputs = form_registration.getElementsByTagName('input')
 
 registration_button.addEventListener('click', (e)=> {  
  user_info_form.style.display = 'none'
+ overlay.style.display = 'none'
 
 
 let domains = inputs[0].value
@@ -114,8 +115,9 @@ let domains = inputs[0].value
     e.preventDefault()
   }
   
+  form_registration.style.display='none'
   e.preventDefault()
-  document.cookie = (`${inputs[0].value} : ${inputs[1].value}; max-age=15`)
+  // document.cookie = (`${inputs[0].value} : ${inputs[1].value}; max-age=100`)
   show_email.innerHTML = `Hello, ${inputs[0].value}`
   
 
@@ -187,7 +189,7 @@ user_info_button.addEventListener('click', (e)=> {
     error_birthdate(e)
     wrong_birth.innerHTML='Введите корректную дату'
   }
-  e.preventDefault()
+  // e.preventDefault()
   
   for (let i = 0; i < form_inputs.length-1; i++) {
     document.cookie += `${form_inputs[i].value+ ','} ; max-age=10`
@@ -201,12 +203,9 @@ for (let i = 0; i < form_inputs.length-1; i++) {
     if (form_inputs[j].value=='undefined') {
       form_inputs[j].value=''
     } 
-      
-  }
-
-      form_inputs[i].value  = document.cookie.split(',')[i]
-      
-    }
+}
+      form_inputs[i].value  = document.cookie.split(',')[i]   
+}
     
     console.log(document.cookie);
 
@@ -273,15 +272,32 @@ function error_telephone (e:any) {
 
 
 
-document.body.addEventListener('keydown', (e)=> {
-  console.log(e.key);
+
+
+let targetInputs = document.body.getElementsByTagName('input')
+
+for (let i = 0; i < targetInputs.length; i++) {
+  targetInputs[i].addEventListener('focus', (e)=> {
+    // @ts-ignore
+    
+    if (e.target.type!='submit' &&  e.target.type!='checkbox') {
+      targetInputs[i].style.outline = '2px solid red'
+      targetInputs[i].style.background = 'pink'
+      console.log(123);
+    }
+  })
+
+  targetInputs[i].addEventListener('blur', (e)=> {
+    // @ts-ignore
+    if (e.target.type!='submit' &&  e.target.type!='checkbox') {
+      targetInputs[i].style.outline = ''
+      targetInputs[i].style.background = ''
+    }
+  })
   
-})
+}
 
-
-
-
-
+console.log(targetInputs);
 
 
 

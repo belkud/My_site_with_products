@@ -9,14 +9,16 @@
   </head>
   <body>
 
+ 
     <header>
       <a href="registration.html">Ссылка</a>
-      <div id="registration">Регистрация</div>
       <div id="entrance">Вход</div>
+      <div id="registration">Регистрация</div>
       <div id="info_about_user_form">О пользователе</div>
+      
+ 
     </header>
-
-<div id="overlay">
+<div id="overlay" style="display: none">
 
   <!--! Форма Вход -->
   <form id="form_entrance" class="form" style="display: none;" action="" >
@@ -33,7 +35,7 @@
     
     <div>
       <label>Запомнить меня</label>
-      <input style="margin-top: 20px;" name="saved" type="checkbox">
+      <input style="margin-top: 20px; outline: 2px solid transparent;" name="saved" type="checkbox">
     </div>
 
   
@@ -80,7 +82,7 @@
  
   <!--! Дополнительная форма с данными -->
 
-  <form class=""  id="user_info_form"  action="">
+  <form style="display: none"  id="user_info_form"  action="">
     <div></div>
     <div>
       <br>

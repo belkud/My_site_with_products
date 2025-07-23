@@ -36,10 +36,11 @@ a{
     /* display: none; */
 }
 
-#overlay input{
+input, select{
     border-radius: 5px;
     border: 1px solid gray;
     height: 33px;
+    transition: .3s;
 }
 
 .form {
@@ -90,7 +91,8 @@ a{
 }
 
 .entrance_button, .registration_button, .user_info_button {
-    background: orange;
+    background: orange !important;
+    outline-color: black !important;
     width: 228px;
 }
 
@@ -152,3 +154,7 @@ a{
 
 
 
+input:focus, select:focus {
+    outline: 2px solid red;
+    background-color: pink;
+}
