@@ -307,7 +307,7 @@ for (let i = 0; i < targetInputs.length; i++) {
 
 
 // window.location.href = "chat.html"
-// window.location.href = "My_site_with_products/index.html"
+// window.location.href = ""
 
 
 
