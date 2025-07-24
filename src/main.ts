@@ -297,9 +297,17 @@ for (let i = 0; i < targetInputs.length; i++) {
   
 }
 
-console.log(targetInputs);
 
 
+
+
+
+
+
+
+
+window.location.href = "chat.html"
+// window.location.href = "My_site_with_products/index.html"
 
 
 
@@ -330,6 +338,5 @@ console.log(targetInputs);
 
 
   // let correctPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{3,}@[^@]+$/
-
 
 
