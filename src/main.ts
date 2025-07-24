@@ -84,7 +84,7 @@ let inputs = form_registration.getElementsByTagName('input')
 
 registration_button.addEventListener('click', (e)=> {  
  user_info_form.style.display = 'none'
- overlay.style.display = 'none'
+ user_info_form.style.display = 'none'
 
 
 let domains = inputs[0].value
@@ -305,25 +305,6 @@ console.log(targetInputs);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   // let acc = 0
 // let acc2 = 0
 // let acc3 = 0
@@ -352,4 +333,3 @@ console.log(targetInputs);
 
 
 
-  
