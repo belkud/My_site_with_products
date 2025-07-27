@@ -1,12 +1,13 @@
 export default {
     base: '/My_site_with_products/',
-    // base2: '/My_site_with_products/chat.html',
-    
-    // server: {
-    // headers: {
-    //   'Content-Type': 'application/javascript'
-    // }
-//   }
-
-
-}
+    build: {
+      rollupOptions: {
+        input: {
+          // @ts-ignore
+          main: resolve(__dirname, 'index.html'),
+          // @ts-ignore
+          idbm: resolve(__dirname, 'chat.html'),
+        }
+      }
+    }
+  }
