@@ -26,6 +26,200 @@
 </form>
  
 
+<form id="container_with_tickets">
+  <div style="display: flex; gap: 25px;">
+      <div>
+        <label for="directions">Direction</label>
+        <select name="" id="directions">
+          <option value="">Sochi - Moscow</option>
+          <option value="">Sochi - Saint-Peterburg</option>
+          <option value="">Sochi - Volgograd</option>
+          <option value="">Sochi - Novgorod</option>
+          <option value="">Sochi - Kaliningrad</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="">Date</label>
+        <input type="date" name="" id="">
+      </div>
+
+      <input type="submit" name="" id="" value="Search">
+
+  </div>
+<hr>
+
+<div id="seats">
+
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  
+</div>
+
+  <input id="book" type="submit" value="book">
+</form>
+
+<div id="tickets_chart">
+  <h2>My tickets</h2>
+  <div id="passangers_info">
+    <div>Direction</div>
+    <div>Date</div>
+    <div>Seat</div>
+  </div>
+</div>
+
+
+<style>
+  #container_with_tickets {
+    margin-top: 100px;
+    background: rgb(147, 197, 134);
+    padding: 20px;
+    width: 730px;
+  }
+
+  #seats {
+    border: 1px solid gray;
+    border-radius: 10px;
+    width: 700px;
+    padding: 15px; 
+    display: flex;
+    gap: 10px;
+  }
+
+  #seats>div {
+    border: 1px solid gray;
+    display: flex;
+    flex-wrap: wrap;
+    width: 88px;
+    gap: 2px;  
+  }
+
+  #seats>div>div{
+    /* border: 1px solid red; */
+    display: flex;
+   
+    align-items: center;
+    width: 41px;
+    height: 25px;
+  }
+
+  #book {
+    display: flex;
+    margin-left: auto;
+    min-width: 120px;
+    margin-top: 10px;
+  }
+
+  #tickets_chart>div {
+    display: flex;
+  }
+  
+  #tickets_chart>div>div {
+    border: 1px solid #000;
+    font-size: 2em;
+    padding: 10px;
+    width: 150px;
+  }
+
+</style>
+
+
+
+
+
+<!--! исчезающий круг -->
+<!-- <div id="contaner">
+  <div id="circle"></div>
+  <div id="square1"></div>
+  <div id="square2"></div>
+</div> -->
+
+<style>
+  #contaner {
+    margin: 200px;
+    transition: 40s;
+    transform:rotate(360deg);
+    height: 200px;
+    width: 200px;
+    rotate: 0deg;
+    /* position: absolute; */
+    animation: rotate 20s;
+  }
+
+ 
+
+  #circle {
+    width: 200px;
+    height: 200px;
+    border: 5px solid red;
+    border-radius: 50%;
+    position: absolute;
+  }
+  #square1 {
+    width: 200px;
+    height: 210px;
+    background: lightgray;
+    margin-top: -215px;
+    margin-left: 105px;
+    position: absolute;
+    border: 1px solid #000;
+    animation: moveSquarer1 10s forwards;
+    /* animation-timing-function:cubic-bezier(0.05, 0.085, 0.85, 0.05); */
+
+  }
+  #square1::before {
+    content: '';
+    width: 30px;
+    height: 30px;
+    background: lightgray;
+    border: 1px solid #000;
+    position: absolute;
+    margin-top: 200px;
+    margin-left: 90px;
+    animation: rotatePseudoEl 5s 3s;
+  }
+  @keyframes rotatePseudoEl {
+    to {
+      
+      margin-left: 0px;
+      rotate: 90deg;
+    }
+    
+  }
+
+  #square2 {
+    width: 200px;
+    height: 210px;
+    background: lightgray;
+    position: absolute;
+    margin-top: 210px;
+    margin-left: -95px;
+    border: 1px solid #000;
+    animation: moveSquarer2 10s 9s linear forwards;
+  }
+
+  @keyframes moveSquarer1 {
+    to {
+      margin-top: 0px;
+    }
+  }
+  @keyframes moveSquarer2 {
+    to {
+      margin-top: 0px;
+    }
+  }
+
+</style>
+
+
+
+
+
 
 
 
