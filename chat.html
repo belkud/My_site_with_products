@@ -30,25 +30,24 @@
   <div style="display: flex; gap: 25px;">
       <div>
         <label for="directions">Direction</label>
-        <select name="" id="directions">
-          <option value="">Sochi - Moscow</option>
-          <option value="">Sochi - Saint-Peterburg</option>
-          <option value="">Sochi - Volgograd</option>
-          <option value="">Sochi - Novgorod</option>
-          <option value="">Sochi - Kaliningrad</option>
+        <select name="directions" id="directions">
+          <option value="Sochi - Moscow">Sochi - Moscow</option>
+          <option value="Sochi - Saint-Peterburg">Sochi - Saint-Peterburg</option>
+          <option value="Sochi - Volgograd">Sochi - Volgograd</option>
+          <option value="Sochi - Novgorod">Sochi - Novgorod</option>
+          <option value="Sochi - Kaliningrad">Sochi - Kaliningrad</option>
         </select>
       </div>
 
       <div>
         <label for="">Date</label>
-        <input type="date" name="" id="">
+        <input type="date" name="data"  id="data">
       </div>
 
       <input type="submit" name="" id="" value="Search">
 
   </div>
 <hr>
-
 <div id="seats">
 
   <div></div>
@@ -67,9 +66,9 @@
 <div id="tickets_chart">
   <h2>My tickets</h2>
   <div id="passangers_info">
-    <div>Direction</div>
-    <div>Date</div>
-    <div>Seat</div>
+    <div><b>Direction</b></div>
+    <div><b>Date</b></div>
+    <div><b>Seat</b></div>
   </div>
 </div>
 
@@ -121,7 +120,7 @@
   
   #tickets_chart>div>div {
     border: 1px solid #000;
-    font-size: 2em;
+    /* font-size: 2em; */
     padding: 10px;
     width: 150px;
   }
