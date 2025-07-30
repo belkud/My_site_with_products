@@ -6,7 +6,7 @@ export default {
           // @ts-ignore
           main: resolve(__dirname, 'index.html'),
           // @ts-ignore
-          idbm: resolve(__dirname, 'chat.html'),
+          chart: resolve(__dirname, 'chat.html'),
         }
       }
     }
