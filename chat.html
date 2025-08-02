@@ -35,7 +35,7 @@
 <!--!!!!!!!!!!!!!!!!!! задание с поездом!!!!!!!!!!!!!!!!!!!! -->
 
 <form id="container_with_tickets">
-  <div style="display: flex; gap: 25px;">
+  <div style="display: flex; gap:25px;">
       <div>
         <label for="directions">Direction</label>
         <select name="directions" id="directions">
@@ -52,26 +52,30 @@
         <input type="date" name="data"  id="data">
       </div>
 
-      <input type="submit" name="" id="" value="Search">
+      <!-- <input style="min-width: 120px;" type="submit" name="" id="" value="Search"> -->
 
   </div>
 
   <hr>
 
-<div id="seats">
-
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  
+  <div id="seats">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
 </div>
+
+<img id="train_img" src="public/train_no_bg.png" alt="" srcset="">
+
+<div style="display: flex; align-items: flex-end">
   <div id="total">Total: </div>
   <input id="book" type="submit" value="book">
+</div>
 </form>
+
 
 <div id="tickets_chart">
   <h2>My tickets</h2>
@@ -84,27 +88,33 @@
 
 
 <style>
+
+
   #container_with_tickets {
     margin-top: 100px;
-    background: rgb(147, 197, 134);
-    padding: 20px;
-    width: 730px;
+    background: rgb(44, 195, 229);
+    padding: 30px;
+    border-radius: 10px;
+    width: 850px;
+    margin-left: 50px;
+    overflow: hidden;
+    font-size: 1.5em;
   }
 
   #seats {
-    border: 1px solid gray;
+    border: 1px solid rgb(97, 96, 96);
     border-radius: 10px;
-    width: 700px;
     padding: 15px; 
     display: flex;
     gap: 10px;
   }
 
   #seats>div {
-    border: 1px solid gray;
+    border: 1px solid rgb(97, 96, 96);
+    border-radius: 5px;
     display: flex;
     flex-wrap: wrap;
-    width: 88px;
+    width: 108px;
     gap: 2px;  
   }
 
@@ -120,8 +130,13 @@
   #book {
     display: flex;
     margin-left: auto;
-    min-width: 120px;
+    min-width: 150px;
     margin-top: 10px;
+    font-size: 1.05em;
+  }
+
+  #tickets_chart {
+    margin: 50px;
   }
 
   #tickets_chart>div {
@@ -130,11 +145,25 @@
   
   #tickets_chart>div>div {
     border: 1px solid #000;
-    /* font-size: 2em; */
+    font-size: 1.5em;
     padding: 10px;
-    width: 150px;
+    width: 240px;
+  }
+  #train_img {
+    width: 600px;
+    border-bottom: 1px solid #000;
+    padding-left: 800px;
+    margin: 10px;
+    margin-left: -20px;
+    animation: move_train 10s forwards;
+    /* animation: move_train 5s timing-function iteration-count direction fill-mode; */
   }
 
+  @keyframes move_train {
+    100% {
+        margin-left: -1315px;
+    }
+  }
 </style>
 
 

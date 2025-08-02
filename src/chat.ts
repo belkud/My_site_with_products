@@ -125,7 +125,8 @@ console.log(today.getFullYear());
 console.log(today.getDate());
 console.log(today.getMonth());
 
-data.value = `${today.getFullYear()}-0${today.getMonth()+1}-${today.getDate()}`
+data.value = `${today.getFullYear()}-${today.getMonth()+1< 10 ? 0 : ''}${today.getMonth()+1}-${today.getDate()<=9 ? 0 : ''}${today.getDate()}`
+
 
 
 let directions = document.querySelector('#directions') as HTMLSelectElement
@@ -146,10 +147,10 @@ for (let i = 0; i < tickets_input.length; i++) {
   
 
   //! 
-  totalAcc+=1*55
+  totalAcc+=1*1600
 } 
 
-total.innerHTML = `Total: общая стоимость ${totalAcc} долларов`
+total.innerHTML = `Total: Общая стоимость ${totalAcc} рублей`
 
 //! пишем cookie
   document.cookie = `общая стоимость ${totalAcc} долларов; max-age =50`
