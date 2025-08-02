@@ -1,3 +1,5 @@
+import { resolve } from "path";
+
 export default {
     base: '/My_site_with_products/',
     build: {
