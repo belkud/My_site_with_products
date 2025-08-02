@@ -11,21 +11,7 @@
       
     
 <div>Страница находится в стадии разработки</div>
-<!-- <div>Страница находится в стадии разработки</div> -->
-<!-- <div>Страница находится в стадии разработки</div> -->
- 
-<!--!! написть текст и его сохранить на 1 минуту -->
 
-
-<form id="container" style="display: flex; flex-direction: column; width: 200px;">
-  <textarea name="" id="chat_with_users"></textarea>
-  <input type="text">
-  <input type="text">
-  <input type="text">
-  <!-- <input type="text">
-  <input type="text"> -->
-  <input type="submit">
-</form>
  
 
 
@@ -51,8 +37,7 @@
         <label for="">Date</label>
         <input type="date" name="data"  id="data">
       </div>
-
-      <!-- <input style="min-width: 120px;" type="submit" name="" id="" value="Search"> -->
+<img id="logo_rzd" src="public/logo_rzd.png" alt="">
 
   </div>
 
@@ -99,6 +84,7 @@
     margin-left: 50px;
     overflow: hidden;
     font-size: 1.5em;
+    /* min-height: 100px; */
   }
 
   #seats {
@@ -115,7 +101,8 @@
     display: flex;
     flex-wrap: wrap;
     width: 108px;
-    gap: 2px;  
+    gap: 8px;
+    padding: 3px;  
   }
 
   #seats>div>div{
@@ -149,11 +136,19 @@
     padding: 10px;
     width: 240px;
   }
+
+  #logo_rzd {
+    width: 100px;
+    filter: drop-shadow(3px 3px 2px aliceblue);
+    margin-left: auto;
+    margin-top: -20px;
+  }
+
   #train_img {
     width: 600px;
     border-bottom: 1px solid #000;
     padding-left: 800px;
-    margin: 10px;
+    margin-top: 10px;
     margin-left: -20px;
     animation: move_train 10s forwards;
     /* animation: move_train 5s timing-function iteration-count direction fill-mode; */
