@@ -87,17 +87,6 @@ for (let i = 0; i < tickets_label.length; i++) {
 
   
 
-let data = document.querySelector('#data') as HTMLInputElement
-
-let today = new Date()
-console.log(today.toISOString().split('-'));
-console.log(today.getFullYear());
-console.log(today.getDate());
-console.log(today.getMonth());
-
-data.value = `${today.getFullYear()}-${today.getMonth()+1< 10 ? 0 : ''}${today.getMonth()+1}-${today.getDate()<=9 ? 0 : ''}${today.getDate()}`
-
-
 
 let directions = document.querySelector('#directions') as HTMLSelectElement
 
@@ -115,54 +104,7 @@ for (let i = 0; i < tickets_input.length; i++) {
   <div>${tickets_input[i].name}</div>
   </div>`
   
-
-  //! 
-  totalAcc+=1*1600
 } 
 
-total.innerHTML = `Total: Общая стоимость ${totalAcc} рублей`
-
-//! пишем cookie
-  document.cookie = `общая стоимость ${totalAcc} долларов; max-age =50`
-
-//! обнуляем Acc
-setTimeout(() => {
-  totalAcc=0  
-});
-}
-
-//! чистим инпуты
-let inputs = document.querySelectorAll('input')
-
-inputs.forEach(el => {
-  el.checked = false; 
-}); 
-
-})
-
-
-
-
-// let myGithub = await fetch ('https://api.github.com/users/belkud')
-// let photo = await myGithub.json()
-
-// console.log(photo);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}})
 
