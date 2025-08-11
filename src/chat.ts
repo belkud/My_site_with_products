@@ -12,29 +12,56 @@ import './style.css'
 
  let all_users = document.querySelector('#all_users') as HTMLDivElement
 
+let info_about_user = document.querySelectorAll('#users_table tr td:last-child')
+console.log(info_about_user);
+
 
 async function showUsers() {
-  
  try {
    let users = await fetch('https://jsonplaceholder.typicode.com/users')
-   console.log(users);
-   
    let user = await users.json()
-   console.log(user);
-   
+
+ 
    for (let i = 0; i < user.length; i++) {
-      // console.log(user[i].name);
       all_users.innerHTML += `<div>${user[i].name}</div>`
    }
-  
- } catch (error) {
-  console.log('ошибка');
-  all_users.innerHTML = 'Произошла ошибка при загрузке данных'
- }
 
+let users_name = all_users.children 
+  for (let i = 0; i < users_name.length; i++) {
+    users_name[i].addEventListener('click', (e:any)=> {
+      console.log(e.target.innerHTML);
+
+
+info_about_user[0].innerHTML = user[i].name
+info_about_user[1].innerHTML = user[i].username
+info_about_user[2].innerHTML = user[i].address.city, ', ', user[i].address.street
+info_about_user[3].innerHTML = user[i].email
+info_about_user[4].innerHTML = user[i].phone
+info_about_user[5].innerHTML = user[i].website
+    })
 }
 
+
+
+
+
+
+
+ } catch (error) {
+  all_users.innerHTML = 'Произошла ошибка при загрузке данных'
+ }
+}
 showUsers()
+
+
+// x-api-key: reqres-free-v1
+
+
+
+
+let mass = ['name', 'username']
+console.log(mass[0]);
+
 
 
 
