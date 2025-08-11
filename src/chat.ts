@@ -34,7 +34,7 @@ let users_name = all_users.children
 
 info_about_user[0].innerHTML = user[i].name
 info_about_user[1].innerHTML = user[i].username
-info_about_user[2].innerHTML = user[i].address.city, ', ', user[i].address.street
+info_about_user[2].innerHTML = user[i].address.city + ', ' + user[i].address.street
 info_about_user[3].innerHTML = user[i].email
 info_about_user[4].innerHTML = user[i].phone
 info_about_user[5].innerHTML = user[i].website
