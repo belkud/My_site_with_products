@@ -6,16 +6,35 @@ import './style.css'
 
 
 
-
 // window.addEventListener('DOMContentLoaded', ()=> {
     
    
 
- 
+ let all_users = document.querySelector('#all_users') as HTMLDivElement
 
 
+async function showUsers() {
+  
+ try {
+   let users = await fetch('https://jsonplaceholder.typicode.com/users')
+   console.log(users);
+   
+   let user = await users.json()
+   console.log(user);
+   
+   for (let i = 0; i < user.length; i++) {
+      // console.log(user[i].name);
+      all_users.innerHTML += `<div>${user[i].name}</div>`
+   }
+  
+ } catch (error) {
+  console.log('ошибка');
+  all_users.innerHTML = 'Произошла ошибка при загрузке данных'
+ }
 
+}
 
+showUsers()
 
 
 
